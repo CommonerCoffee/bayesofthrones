@@ -1,0 +1,74 @@
+\documentclass[dvips,10pt]{article}
+
+% Any percent sign marks a comment to the end of the line
+
+% Every latex document starts with a documentclass declaration like this
+% The option dvips allows for graphics, 12pt is the font size, and article
+%   is the style
+
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage[backend=biber,
+style=alphabetic,
+sorting=ynt]{biblatex}
+
+
+% These are additional packages for "pdflatex", graphics, and to include
+% hyperlinks inside a document.
+
+\setlength{\oddsidemargin}{0.2in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{0in}
+
+
+% These force using more of the margins that is the default style
+
+\begin{document}
+
+% Everything after this becomes content
+% Replace the text between curly brackets with your own
+
+\title{Game of Thrones Death Prediction}
+\author{Adam Peterson, Raymond Luu}
+\date{\today}
+
+% You can leave out "date" and it will be added automatically for today
+% You can change the "\today" date to any text you like
+
+
+\maketitle
+
+% This command causes the title to be created in the document
+
+\section{Project Summary}
+
+% An article style is separated into sections and subsections with 
+%   markup such as this.  Use \section*{Principles} for unnumbered sections.
+
+This project aims to reproduce and improve upon the work\footnote{project details may be found at http://www.math.canterbury.ac.nz/~r.vale/bayesofthrones.html} published by Dr. Richard Vale of the University of Canterbury[attached], predicting the number of Point-of-View(POV) chapters a character might have in book 5 or 6 of the Game of Throne Series(c). Thus, this project consists of two parts: (1) The replication of Dr. Vale's research and (2) the formation and testing of additional models to improve estimation and prediction of the aformentioned POV-character deaths.
+
+
+\section{Project Description}
+
+
+Dr. Vale employs a hierarchcial bayesian model, using the data of how many chapters each POV character has in each book to estimate the number of chapters the same character has in a future book, a proxy for estimating possible death. We aim to reproduce this model in Python (v2.7) and, using the already published death count, attempt to improve model performance by exploiting several features of the book's narrative.\\
+While the final models planned to be submitted are still subject to further testing, current ideas include: 
+\begin{enumerate}
+	\item a graphical model exploiting the family-networks of Game of Thrones
+	\item Utilizing sentiment analysis by character chapter, and in-text-proximity to character of interest
+	\item Replacement of poisson assumption with negative binomial as noted in article
+	\item Negative Binomial GLM
+\end{enumerate}
+
+
+\section{Allocation of Responsibilities}
+Work required for both sub-projects will be evenly divided between the two team-members. A github repo will be used for version control of project code and a cloud-sharing service will be used to ensure same-data usage. 
+
+\section{Dataset}
+All datasets used in the final project are expected to be some function of the Game of Thrones books' corpus.
+
+
+
+
+
+\end{document}
